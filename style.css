@@ -45,6 +45,18 @@ body {
   min-width: 150px;
 }
 
+.toast.info {
+  color: rebeccapurple;
+}
+
+.toast.success {
+  color: green;
+}
+
+.toast.error {
+  color: red;
+}
+
 .btn {
   color: rebeccapurple;
   background-color: #ffffff;

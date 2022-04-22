@@ -9,21 +9,29 @@ const messages = [
 ]
 
 
+const type = [
+  'info',
+  'success',
+  'error',
+]
+
 
 const getRandomMessage = () => messages[Math.floor(Math.random() * messages.length)]
-
-button.addEventListener('click', createNotification)
+const getRandomType = () => type[Math.floor(Math.random() * type.length)]
+button.addEventListener('click', () => createNotification())
 
 let topOfLastEl = 0
-function createNotification() {
+function createNotification(message = null, type = null) {
   if (toasts.children.length === 0) {
     topOfLastEl = 0
   }
 
   const notif = document.createElement('div')
   notif.classList.add('toast')
-  notif.innerHTML = getRandomMessage()
+  notif.classList.add(type ? type : getRandomType())
+  notif.innerHTML = message ? message : getRandomMessage()
   toasts.append(notif)
+
   setTimeout(() => {
     if (toasts.children.length > 1) {
       topOfLastEl += (notif.clientHeight + 10)
