@@ -20,7 +20,7 @@ const getRandomType = () => type[Math.floor(Math.random() * type.length)]
 button.addEventListener('click', () => createNotification())
 
 
-//topOfLastEl is for get elements top position y axis
+//topOfLastEl to get the top position of the elements along the y - axis
 let topOfLastEl = 0
 function createNotification(message = null, type = null) {
   //if notifications lenght equals to 0 then topOfLastEl equals to 0 too
